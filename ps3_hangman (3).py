@@ -1,8 +1,8 @@
 
 import random
-
-#Imports random module which allows use to get random numbers
-
+import string
+#Imports random  module which allows use to get random numbers
+#Imports string module which allows use to  use string.ascii_lower
 WORDLIST_FILENAME = "words.txt"
 
 def loadWords():
@@ -36,13 +36,6 @@ def chooseWord(wordlist):
     """
     return random.choice(wordlist)
 
-# end of helper code
-# -----------------------------------
-
-# Load the list of words into the variable wordlist
-# so that it can be accessed from anywhere in the program
-wordlist = loadWords()
-secretWord=chooseWord(wordlist).lower()
 
 def isWordGuessed(secretWord, lettersGuessed):
     return all(i in lettersGuessed for i in secretWord)
@@ -60,7 +53,6 @@ def getGuessedWord(secretWord, lettersGuessed):
 
 
 def getAvailableLetters(lettersGuessed):
-    import string
     """
     STRING ENABLES US TO USE STRING METHODS 
     """
@@ -75,10 +67,9 @@ def askforinput(intento,lettersGuessed):
     return guessinlowercase
 
 def spacer():
-    print ("-------------")
+    print ("---------------")
     
 def hangman(secretWord):
-    import string
    
     lettersGuessed=[]
     intento=8
@@ -116,5 +107,7 @@ def hangman(secretWord):
         print('Sorry, you ran out of guesses. The word was ' + secretWord)
         spacer()
             
-
-hangman(secretWord)
+if __name__=='__main__':
+    wordlist = loadWords()
+    secretWord=chooseWord(wordlist).lower()
+    hangman(secretWord)
