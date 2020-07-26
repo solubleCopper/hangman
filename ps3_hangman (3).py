@@ -26,6 +26,7 @@ def loadWords():
     Convierte una string en una lista de strings, el spearador por default es el whitespace pero puedes especificarlo ()
     """
     print("  ", len(wordlist), "words loaded.")
+    inFile.close()
     return wordlist
 
 def chooseWord(wordlist):
