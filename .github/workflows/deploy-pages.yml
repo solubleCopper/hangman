@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/great-dijkstra-vfrw7a]
+    branches: [master, claude/great-dijkstra-vfrw7a]
   workflow_dispatch:
 
 permissions:
