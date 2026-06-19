@@ -83,6 +83,67 @@ const BANK = [
   { lvl: 3, cat: "Récords", q: "¿Cuántos días dura el Mundial 2026 (del 11 de junio al 19 de julio)?", opts: ["30", "35", "39", "45"], a: 2 },
 ];
 
+/* ------------------------------------------------------------------ */
+/*  CULTURA GENERAL — lo que un español "debería" saber                */
+/* ------------------------------------------------------------------ */
+const CULTURA = [
+  { cat: "Historia", q: "¿En qué año comenzó la Guerra Civil Española?", opts: ["1931", "1936", "1939", "1945"], a: 1 },
+  { cat: "Literatura", q: "¿Quién escribió «Don Quijote de la Mancha»?", opts: ["Lope de Vega", "Quevedo", "Miguel de Cervantes", "Góngora"], a: 2 },
+  { cat: "Geografía", q: "¿Cuál es el río más largo de la Península Ibérica?", opts: ["Ebro", "Tajo", "Duero", "Guadalquivir"], a: 1 },
+  { cat: "Política", q: "¿Cuántas comunidades autónomas tiene España?", opts: ["15", "17", "19", "20"], a: 1 },
+  { cat: "Arte", q: "¿Quién pintó el «Guernica»?", opts: ["Dalí", "Picasso", "Velázquez", "Goya"], a: 1 },
+  { cat: "Arte", q: "¿En qué ciudad está la Sagrada Familia?", opts: ["Madrid", "Valencia", "Barcelona", "Sevilla"], a: 2 },
+  { cat: "Historia", q: "¿En qué año llegó Colón a América?", opts: ["1492", "1480", "1500", "1512"], a: 0 },
+  { cat: "Fiestas", q: "¿Qué se celebra en España el 12 de octubre?", opts: ["Día de la Constitución", "Fiesta Nacional (Hispanidad)", "Día del Trabajo", "Día de Andalucía"], a: 1 },
+  { cat: "Historia", q: "¿Quién fue el dictador de España hasta 1975?", opts: ["Primo de Rivera", "Francisco Franco", "Adolfo Suárez", "Carrero Blanco"], a: 1 },
+  { cat: "Arte", q: "¿Quién pintó «Las Meninas»?", opts: ["Velázquez", "Goya", "El Greco", "Murillo"], a: 0 },
+  { cat: "Política", q: "¿En qué año se aprobó la Constitución española vigente?", opts: ["1975", "1978", "1981", "1982"], a: 1 },
+  { cat: "Geografía", q: "¿Cuál es el pico más alto de España?", opts: ["Mulhacén", "Teide", "Aneto", "Veleta"], a: 1 },
+  { cat: "Literatura", q: "¿Quién escribió «La casa de Bernarda Alba»?", opts: ["Antonio Machado", "Federico García Lorca", "Rafael Alberti", "Juan Ramón Jiménez"], a: 1 },
+  { cat: "Historia", q: "¿Qué moneda se usaba en España antes del euro?", opts: ["Peseta", "Real", "Duro", "Escudo"], a: 0 },
+  { cat: "Gastronomía", q: "¿De qué región es típica la paella?", opts: ["Andalucía", "Comunidad Valenciana", "Galicia", "Asturias"], a: 1 },
+  { cat: "Fiestas", q: "¿En qué comunidad se celebran «Las Fallas»?", opts: ["Cataluña", "Comunidad Valenciana", "Andalucía", "Galicia"], a: 1 },
+  { cat: "Arte", q: "¿Qué pintor surrealista español tenía un famoso bigote?", opts: ["Miró", "Dalí", "Picasso", "Tàpies"], a: 1 },
+  { cat: "Geografía", q: "¿Qué estrecho separa España de África?", opts: ["Gibraltar", "Bósforo", "Magallanes", "Ormuz"], a: 0 },
+  { cat: "Refranes", q: "«En boca cerrada…»", opts: ["…no entran moscas", "…no hay verdad", "…todo calla", "…nada se pierde"], a: 0 },
+  { cat: "Literatura", q: "¿Quién escribió «La Regenta»?", opts: ["Clarín (Leopoldo Alas)", "Pérez Galdós", "Unamuno", "Pío Baroja"], a: 0 },
+  { cat: "Monarquía", q: "¿Qué rey reina en España actualmente?", opts: ["Juan Carlos I", "Felipe VI", "Felipe V", "Alfonso XIII"], a: 1 },
+  { cat: "Símbolos", q: "¿Qué animal aparece en las famosas siluetas de Osborne en las carreteras?", opts: ["Toro", "Caballo", "León", "Águila"], a: 0 },
+  { cat: "Fiestas", q: "¿En qué ciudad se celebran los Sanfermines?", opts: ["Pamplona", "Bilbao", "Logroño", "Burgos"], a: 0 },
+  { cat: "Deporte", q: "¿Qué tenista español ha ganado más veces Roland Garros?", opts: ["David Ferrer", "Rafael Nadal", "Carlos Alcaraz", "Carlos Moyà"], a: 1 },
+  { cat: "Gastronomía", q: "¿De qué región es típica la fabada?", opts: ["Asturias", "Galicia", "Cantabria", "País Vasco"], a: 0 },
+  { cat: "Política", q: "¿Quién fue el primer presidente del Gobierno de la democracia?", opts: ["Felipe González", "Adolfo Suárez", "Leopoldo Calvo-Sotelo", "José María Aznar"], a: 1 },
+  { cat: "Tradiciones", q: "¿Qué se come a las 12 campanadas de Nochevieja?", opts: ["Uvas", "Aceitunas", "Almendras", "Cerezas"], a: 0 },
+  { cat: "Geografía", q: "¿Cuál es la capital de España?", opts: ["Barcelona", "Madrid", "Sevilla", "Valencia"], a: 1 },
+  { cat: "Tradiciones", q: "Según la tradición, ¿dónde están los restos del apóstol Santiago?", opts: ["Toledo", "Santiago de Compostela", "Oviedo", "Zaragoza"], a: 1 },
+  { cat: "Refranes", q: "«A caballo regalado…»", opts: ["…no le mires el diente", "…dale de comer", "…móntalo deprisa", "…cuídalo bien"], a: 0 },
+];
+
+/* Castigos aleatorios para quien falle (de leve a fuerte, todo en broma) */
+const CASTIGOS = [
+  "Bebe un trago 🍺",
+  "Bebe dos tragos 🍷",
+  "Imita a un animal hasta tu próximo turno 🐒",
+  "Cuenta una anécdota vergonzosa al grupo 🙈",
+  "Habla con acento extranjero hasta tu próximo turno 🗣️",
+  "Haz 10 sentadillas 🏋️",
+  "Baila sin música durante 20 segundos 💃",
+  "El grupo te pone un mote por el resto de la partida 😈",
+  "Brinda y bebe a la salud del jugador de tu derecha 🥂",
+  "No puedes decir «sí» ni «no» durante una ronda 🤐",
+  "Canta el estribillo de una canción que elija el grupo 🎤",
+  "Bebe cada vez que alguien ría en la próxima ronda 😂",
+  "Ponte de pie y aguanta una pose de superhéroe 30 segundos 🦸",
+  "Cede tu bebida al jugador de tu izquierda 🍹",
+  "Habla solo en susurros hasta tu próximo turno 🤫",
+  "Cuenta un chiste; si nadie ríe, bebe otra vez 🃏",
+  "Intercambia un zapato con quien tengas al lado 👟",
+  "Haces de camarero del grupo hasta tu próximo turno 🍽️",
+  "Bebe con el meñique levantado el resto de la partida ☝️",
+  "Deja que el de tu izquierda te haga una pregunta y respóndela con sinceridad 🤐",
+];
+function randomCastigo() { return CASTIGOS[Math.floor(Math.random() * CASTIGOS.length)]; }
+
 const PNP_ROUND_OPTIONS = [3, 5, 7, 10];
 const MD_ROUND_OPTIONS = [5, 10, 15];
 const LEVELS = [{ k: 1, l: "Fácil" }, { k: 2, l: "Media" }, { k: 3, l: "Difícil" }, { k: "mix", l: "Mezcla" }];
@@ -155,7 +216,7 @@ function MiniBoard({ roster, myPid }) {
 }
 
 export default function MundialTrivia() {
-  const [screen, setScreen] = useState("home"); // home | pnp-setup | pnp-play | pnp-results | md
+  const [screen, setScreen] = useState("home"); // home | pnp-setup | pnp-play | pnp-results | cg-setup | cg-play | cg-done | md
 
   /* ---------------- pass & play state ---------------- */
   const [players, setPlayers] = useState([{ name: "Jugador 1" }, { name: "Jugador 2" }]);
@@ -171,6 +232,18 @@ export default function MundialTrivia() {
   const [revealed, setRevealed] = useState(false);
   const [timeLeft, setTimeLeft] = useState(20);
   const inputRef = useRef(null);
+
+  /* ---------------- cultura general (castigos) state ---------------- */
+  const [cgPlayers, setCgPlayers] = useState([{ name: "Jugador 1" }, { name: "Jugador 2" }]);
+  const [cgNameInput, setCgNameInput] = useState("");
+  const [cgRounds, setCgRounds] = useState(5);
+  const [cgDeck, setCgDeck] = useState([]);
+  const [cgTurn, setCgTurn] = useState(0);
+  const [cgSelected, setCgSelected] = useState(null);
+  const [cgRevealed, setCgRevealed] = useState(false);
+  const [cgPunish, setCgPunish] = useState(null);
+  const [cgPenalties, setCgPenalties] = useState([]);
+  const cgInputRef = useRef(null);
 
   /* ---------------- multi-device state ---------------- */
   const [mdRole, setMdRole] = useState(null);
@@ -255,6 +328,57 @@ export default function MundialTrivia() {
     setTurn(0); setSelected(null); setRevealed(false); setTimeLeft(timeLimit);
     setScreen("pnp-play");
   }
+
+  /* ---------------- CULTURA GENERAL (castigos) ---------------- */
+  const cgMaxRounds = Math.floor(CULTURA.length / Math.max(1, cgPlayers.length));
+  const cgRoundChoices = (() => { const c = PNP_ROUND_OPTIONS.filter((r) => r <= cgMaxRounds); return c.length ? c : [Math.max(1, cgMaxRounds)]; })();
+  useEffect(() => {
+    if (!cgRoundChoices.includes(cgRounds)) setCgRounds(cgRoundChoices[cgRoundChoices.length - 1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cgPlayers.length]);
+
+  function cgAddPlayer() {
+    const n = cgNameInput.trim();
+    if (cgPlayers.length >= MAX_PLAYERS) return;
+    setCgPlayers([...cgPlayers, { name: (n || `Jugador ${cgPlayers.length + 1}`).slice(0, 18) }]);
+    setCgNameInput(""); if (cgInputRef.current) cgInputRef.current.focus();
+  }
+  function cgRemovePlayer(i) { setCgPlayers(cgPlayers.filter((_, idx) => idx !== i)); }
+  function cgStart() {
+    if (cgPlayers.length < 1) return;
+    setCgDeck(shuffle(CULTURA).slice(0, cgRounds * cgPlayers.length));
+    setCgPenalties(cgPlayers.map(() => 0));
+    setCgTurn(0); setCgSelected(null); setCgRevealed(false); setCgPunish(null);
+    setScreen("cg-play");
+  }
+  const cgTotal = cgDeck.length;
+  const cgPlayerIdx = cgPlayers.length ? cgTurn % cgPlayers.length : 0;
+  const cgRoundNum = cgPlayers.length ? Math.floor(cgTurn / cgPlayers.length) + 1 : 1;
+  const cgQuestion = cgDeck[cgTurn];
+  function cgChoose(i) {
+    if (cgRevealed || !cgQuestion) return;
+    setCgSelected(i); setCgRevealed(true);
+    if (i !== cgQuestion.a) {
+      setCgPunish(randomCastigo());
+      setCgPenalties((p) => p.map((v, idx) => (idx === cgPlayerIdx ? v + 1 : v)));
+    } else {
+      setCgPunish(null);
+    }
+  }
+  function cgNext() {
+    if (cgTurn + 1 >= cgTotal) setScreen("cg-done");
+    else { setCgTurn(cgTurn + 1); setCgSelected(null); setCgRevealed(false); setCgPunish(null); }
+  }
+  function cgRematch() {
+    setCgDeck(shuffle(CULTURA).slice(0, cgRounds * cgPlayers.length));
+    setCgPenalties(cgPlayers.map(() => 0));
+    setCgTurn(0); setCgSelected(null); setCgRevealed(false); setCgPunish(null);
+    setScreen("cg-play");
+  }
+  const cgRanking = useMemo(
+    () => cgPlayers.map((p, i) => ({ name: p.name, pen: cgPenalties[i] ?? 0, color: ACCENTS[i % ACCENTS.length] })).sort((a, b) => a.pen - b.pen),
+    [cgPlayers, cgPenalties]
+  );
 
   /* ---------------- MULTI-DEVICE: derived ---------------- */
   const mdPool = useMemo(() => poolIdx(mdLevel), [mdLevel]);
@@ -466,6 +590,14 @@ export default function MundialTrivia() {
               </span>
               <span className="m26-mode-arrow">→</span>
             </button>
+            <button className="m26-mode" onClick={() => setScreen("cg-setup")}>
+              <span className="m26-mode-emoji">🍺</span>
+              <span className="m26-mode-main">
+                <span className="m26-mode-title">Cultura general «a la española»</span>
+                <span className="m26-mode-desc">Preguntas que todo español debería saber. ¿Fallas? Castigo aleatorio: beber, retos y movidas raras.</span>
+              </span>
+              <span className="m26-mode-arrow">→</span>
+            </button>
           </div>
         </div>
       )}
@@ -592,6 +724,121 @@ export default function MundialTrivia() {
           </div>
           <div className="m26-actions">
             <button className="m26-start" onClick={pnpRematch}>Revancha (mismos jugadores)</button>
+            <button className="m26-ghost" onClick={() => setScreen("home")}>Volver al inicio</button>
+          </div>
+        </div>
+      )}
+
+      {/* ----------------------- CULTURA GENERAL: SETUP ----------------------- */}
+      {screen === "cg-setup" && (
+        <div className="m26-card">
+          <button className="m26-exit" onClick={() => setScreen("home")}>← Volver</button>
+          <h1 className="m26-title m26-title-sm">Cultura <span className="m26-gold">española</span></h1>
+          <p className="m26-sub">Os turnáis el teléfono. Si fallas la pregunta, te toca un castigo aleatorio. Apto para mayores de 18.</p>
+          <PitchLine style={{ margin: "20px 0 22px" }} />
+
+          <div className="m26-label">Jugadores <span className="m26-count">{cgPlayers.length} / {MAX_PLAYERS}</span></div>
+          <div className="m26-addrow">
+            <input ref={cgInputRef} className="m26-input" value={cgNameInput} maxLength={18}
+              placeholder={`Nombre del jugador ${cgPlayers.length + 1}`} onChange={(e) => setCgNameInput(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") cgAddPlayer(); }} aria-label="Nombre del jugador" />
+            <button className="m26-add" onClick={cgAddPlayer} disabled={cgPlayers.length >= MAX_PLAYERS}>Añadir</button>
+          </div>
+          <div className="m26-players">
+            {cgPlayers.map((p, i) => (
+              <div className="m26-chip" key={i} style={{ "--c": ACCENTS[i % ACCENTS.length] }}>
+                <span className="m26-dot" /><span className="m26-chip-name">{p.name}</span>
+                <button className="m26-x" onClick={() => cgRemovePlayer(i)} aria-label={`Quitar a ${p.name}`}>×</button>
+              </div>
+            ))}
+          </div>
+
+          <div className="m26-label" style={{ marginTop: 26 }}>Rondas</div>
+          <Pills items={cgRoundChoices.map((r) => ({ k: r, l: String(r) }))} value={cgRounds} onPick={setCgRounds} />
+          <p className="m26-hint">Cada ronda = 1 pregunta para cada jugador · {cgRounds * cgPlayers.length} preguntas en total</p>
+
+          <button className="m26-start" onClick={cgStart} disabled={cgPlayers.length < 1}>Empezar (¡y a beber!)</button>
+          {cgPlayers.length < 1 && <p className="m26-hint m26-warn">Añade al menos 1 jugador.</p>}
+        </div>
+      )}
+
+      {/* ----------------------- CULTURA GENERAL: PLAY ----------------------- */}
+      {screen === "cg-play" && cgQuestion && (
+        <div className="m26-card">
+          <div className="m26-topbar">
+            <div className="m26-round">Ronda <b>{cgRoundNum}</b> / {cgRounds}</div>
+            <div className="m26-scorestrip">
+              {cgPlayers.map((p, i) => (
+                <div className={"m26-mini" + (i === cgPlayerIdx ? " is-active" : "")} key={i} style={{ "--c": ACCENTS[i % ACCENTS.length] }}>
+                  <span className="m26-mini-name">{p.name}</span><span className="m26-mini-score">{(cgPenalties[i] ?? 0) > 0 ? "🍺".repeat(Math.min(3, cgPenalties[i])) : "–"}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="m26-progress"><span style={{ width: `${(cgTurn / cgTotal) * 100}%` }} /></div>
+          <div className="m26-turn">
+            <div className="m26-turn-eyebrow">Responde</div>
+            <div className="m26-turn-name" style={{ color: ACCENTS[cgPlayerIdx % ACCENTS.length] }}>{cgPlayers[cgPlayerIdx].name}</div>
+          </div>
+          <div className="m26-chiprow"><span className="m26-cat">{cgQuestion.cat}</span></div>
+          <h2 className="m26-q">{cgQuestion.q}</h2>
+          <div className="m26-opts">
+            {cgQuestion.opts.map((opt, i) => {
+              let cls = "m26-opt";
+              if (cgRevealed) { if (i === cgQuestion.a) cls += " is-correct"; else if (i === cgSelected) cls += " is-wrong"; else cls += " is-dim"; }
+              return (
+                <button key={i} className={cls} onClick={() => cgChoose(i)} disabled={cgRevealed}>
+                  <span className="m26-letter">{String.fromCharCode(65 + i)}</span>
+                  <span className="m26-opt-text">{opt}</span>
+                  {cgRevealed && i === cgQuestion.a && <span className="m26-mark">✓</span>}
+                  {cgRevealed && i === cgSelected && i !== cgQuestion.a && <span className="m26-mark">✕</span>}
+                </button>
+              );
+            })}
+          </div>
+          {cgRevealed && (
+            cgSelected === cgQuestion.a ? (
+              <div className="m26-feedback ok"><b>¡Correcto!</b> Te libras del castigo… por ahora.</div>
+            ) : (
+              <div className="m26-castigo">
+                <div className="m26-castigo-eyebrow">¡Fallaste! La respuesta era <b>{cgQuestion.opts[cgQuestion.a]}</b></div>
+                <div className="m26-castigo-label">Castigo</div>
+                <div className="m26-castigo-text">{cgPunish}</div>
+              </div>
+            )
+          )}
+          {cgRevealed && <button className="m26-start" onClick={cgNext}>{cgTurn + 1 >= cgTotal ? "Ver resumen" : "Siguiente jugador →"}</button>}
+        </div>
+      )}
+
+      {/* ----------------------- CULTURA GENERAL: DONE ----------------------- */}
+      {screen === "cg-done" && (
+        <div className="m26-card m26-results">
+          <Confetti />
+          <div className="m26-trophy">🍻</div>
+          <h1 className="m26-win-title">¡Se acabó!</h1>
+          <p className="m26-win-sub">
+            {cgRanking.length > 0 && cgRanking[0].pen === 0
+              ? <>{cgRanking[0].name} no falló ni una. ¡Toda una enciclopedia!</>
+              : cgRanking.length > 0
+                ? <>El más sobrio: <b>{cgRanking[0].name}</b>. El más castigado: <b>{cgRanking[cgRanking.length - 1].name}</b>.</>
+                : null}
+          </p>
+          <PitchLine style={{ margin: "26px 0 22px" }} />
+          <div className="m26-board">
+            {cgRanking.map((r, i) => (
+              <div className={"m26-row" + (i === 0 && r.pen === cgRanking[0].pen ? " is-win" : "")} key={i}>
+                <div className="m26-pos">{i + 1}</div>
+                <div className="m26-row-main">
+                  <div className="m26-row-name">{r.name}</div>
+                  <div className="m26-castigo-count">{r.pen === 0 ? "Sin castigos 😇" : `${r.pen} ${r.pen === 1 ? "castigo" : "castigos"} ${"🍺".repeat(Math.min(6, r.pen))}`}</div>
+                </div>
+                <div className="m26-row-score" style={{ color: r.pen === 0 ? "#56F0A6" : "#FF6B6B" }}>{r.pen}</div>
+              </div>
+            ))}
+          </div>
+          <div className="m26-actions">
+            <button className="m26-start" onClick={cgRematch}>Otra ronda (mismos jugadores)</button>
             <button className="m26-ghost" onClick={() => setScreen("home")}>Volver al inicio</button>
           </div>
         </div>
@@ -908,6 +1155,14 @@ const CSS = `
 .m26-feedback{margin-top:18px; padding:14px 16px; border-radius:12px; font-size:14.5px; line-height:1.45}
 .m26-feedback.ok{background:rgba(86,240,166,.1); border:1px solid rgba(86,240,166,.32); color:#dffff0}
 .m26-feedback.no{background:rgba(255,107,107,.08); border:1px solid rgba(255,107,107,.3); color:#ffe3e3}
+
+.m26-castigo{margin-top:18px; padding:18px 18px 20px; border-radius:14px; background:linear-gradient(180deg, rgba(255,107,107,.16), rgba(255,203,61,.08)); border:1px solid rgba(255,107,107,.4); text-align:center; animation:m26-pop .35s ease}
+.m26-castigo-eyebrow{font-size:13px; color:#ffe3e3; line-height:1.45; margin-bottom:14px}
+.m26-castigo-eyebrow b{color:#fff}
+.m26-castigo-label{font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px}
+.m26-castigo-text{font-size:clamp(19px,5vw,24px); font-weight:800; line-height:1.3; color:#fff}
+.m26-castigo-count{font-size:13px; color:var(--dim); margin-top:2px}
+@keyframes m26-pop{0%{transform:scale(.92); opacity:0} 100%{transform:scale(1); opacity:1}}
 
 .m26-results{text-align:center; overflow:hidden}
 .m26-trophy{font-size:60px; line-height:1; margin-bottom:6px}
